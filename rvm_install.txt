@@ -7,7 +7,7 @@
    rvm get stable 
 
 3) Install version RVM, to date the current version 2.7.1
-  rvm Install 2.7.1
+  rvm install 2.7.1
 
   Если версий несколько, можно сменить версию и так же удалить:
 
