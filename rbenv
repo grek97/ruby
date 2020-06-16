@@ -1,0 +1,67 @@
+
+Установите зависимости, необходимые для установки Ruby:
+$ sudo apt install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
+============================
+Клонируем репозиторий rbenv из GitHub в каталог ~/.rbenv:
+$ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+============================
+Затем добавьте ~/.rbenv/bin в $PATH, чтобы иметь возможность использовать утилиту командной строки rbenv.
+Для этого измените файл ~/.bashrc, чтобы он влиял на будущие сеансы входа в систему:
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+============================
+Затем добавьте команду eval "$(rbenv init -)" в файл ~/.bashrc, чтобы утилита rbenv загружалась автоматически:
+$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+============================
+Затем примените изменения, внесенные в файл ~/.bashrc, для текущего сеанса оболочки:
+$ source ~/.bashrc
+============================
+Проверьте правильность настройки rbenv с помощью команды type, которая выводит дополнительную информацию о команде rbenv:
+$ type rbenv
+
+В окне терминала будет отображаться следующее:
+Output
+rbenv is a function
+rbenv ()
+{
+    local command;
+    command="${1:-}";
+    if [ "$#" -gt 0 ]; then
+        shift;
+    fi;
+    case "$command" in
+        rehash | shell)
+            eval "$(rbenv "sh-$command" "$@")"
+        ;;
+        *)
+            command rbenv "$command" "$@"
+        ;;
+    esac
+}
+============================
+
+Затем установите плагин ruby-build. Этот плагин добавляет команду rbenv install, упрощающую процесс установки новых версий Ruby:
+
+$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+======================
+
+После установки плагина ruby-build вы можете устанавливать требуемые версии Ruby с помощью простой команды. 
+Вначале выведем список всех доступных версий Ruby:
+$ rbenv install -l
+======================
+
+Мы установим Ruby 2.5.1:
+rbenv install 2.5.1
+======================
+
+После завершения установки установите новую версию как версию Ruby по умолчанию с помощью субкоманды global:
+rbenv global 2.5.1
+======================
+
+Проверьте правильность установки Ruby, проверив номер версии:
+ruby -v
+======================
+
+
+
+
+
