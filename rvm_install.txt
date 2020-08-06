@@ -6,6 +6,9 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 
    rvm get stable 
 
+   sudo apt install git-core build-essential libgdbm-dev libncurses5-dev automake libtool bison libffi-dev nodejs 
+
+
 3) Install version RVM, to date the current version 2.7.1
   rvm install 2.7.1
 
