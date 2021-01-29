@@ -39,3 +39,7 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 
   Установим гем для установки гемов:
   gem install bundler  
+
+
+  При установке на WSL - подситеме линукс, для работы rvm нужно добавить строку https://rvm.io/integration/ubuntu-on-windows
+  
